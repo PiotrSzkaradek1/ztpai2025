@@ -6,7 +6,7 @@ const getAllCharacters = async (req, res) => {
     res.json(result.rows);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Wystąpił błąd serwera' });
+    res.status(500).json({ error: 'Server error' });
   }
 };
 
