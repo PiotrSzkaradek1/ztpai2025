@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: my-api
+    ports:
+      - "3000:3000"
+    #volumes:
+    #  - ./backend:/app
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://postgres:haslo@db:5432/db_admin
+    networks:
+      - app-network
+
+  db:
+    image: postgres:17
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: haslo
+      POSTGRES_DB: db_admin
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Jeśli chcesz automatycznie załadować bazę:
+      # - ./db_dump.sql:/docker-entrypoint-initdb.d/db_dump.sql
+      - ./db_init:/docker-entrypoint-initdb.d
+
+    networks:
+      - app-network
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pg-admin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
+volumes:
+  pgdata:
