@@ -34,7 +34,22 @@ const getCharactersByUserId = async (req, res) => {
   }
 };
 
+const getCharactersGroupByLevel = async (req, res) => {
+  try {
+    const result = await db.query(`SELECT level, COUNT(*) 
+    FROM characters
+    GROUP BY level
+    ORDER BY level;
+    `);
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Server error' });
+  }
+};
+
 module.exports = { 
   getAllCharacters,
-  getCharactersByUserId
+  getCharactersByUserId,
+  getCharactersGroupByLevel
   };
