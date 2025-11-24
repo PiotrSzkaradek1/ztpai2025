@@ -8,12 +8,14 @@ services:
     container_name: my-api
     ports:
       - "3000:3000"
-    #volumes:
-    #  - ./backend:/app
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
     depends_on:
       - db
     environment:
       DATABASE_URL: postgres://postgres:haslo@db:5432/db_admin
+      JWT_SECRET: super-tajny-klucz
     networks:
       - app-network
 

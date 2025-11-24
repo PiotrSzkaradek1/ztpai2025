@@ -732,13 +732,9 @@ COPY public.users (id, email, password_hash, created_at) FROM stdin;
 4	mati@gmail.com	$2y$10$YQaoWk7RPqrvYDYjIPuL7eVB0LxjFEfof8i1t5g3mqmTF8VJTNcKm	2025-09-05 21:17:40.226417
 5	wujek@gmail.com	$2y$10$3CJ29jl3g3XoFb1zFO6xWOG88eLBVuHEByqUNh2tkwrqy/HEmxqka	2025-09-05 21:42:16.034917
 6	cc@gmail.com	$2y$10$i5AzYrEFsQPLsNs93GCHdur3P1wFhLOCpzOkOQPAEbmXzalUjvh9C	2025-09-05 21:48:44.813834
-7	dupa@gmail.com	$2y$10$zm2lpU7agqaAxgDwYHdxUuWF08iDePrNPtoTWKe7UF3g83dU4aX3C	2025-09-05 22:18:13.990208
 8	aa@gmail.com	$2y$10$DOWRFLjDsZfoVIBBcG9WguSAa2G7gL8RkO4X1cbrPBTri7sgoCdMu	2025-09-05 22:34:12.757642
 9	rcrc@gmail.com	$2y$10$0Kym6cMitL3UcEH8Pl1P8e5Wbgm22ZzW5EvuL5OuL/Qrbar3YLCJ2	2025-09-05 23:27:55.373438
 10	amen@gmail.com	$2y$10$r.414YRhxBziBrOnZ6s5le3c9PTg4LNpiqqyxDuSXHhRhAH/Lizai	2025-09-05 23:39:18.075885
-11	dupa@dupa.pl	$2y$10$V2XZuxsHJLbttbXuQtvVFeJ/z.yTzck2Mt.vqRL9nIKhLI.UGlGqq	2025-09-05 23:39:29.150375
-12	chuj@chuj.chuj	$2y$10$ac0rSTPhZkmvTs.nduBs7OPBTBPVn85wwOiVbfE4oEy1X1j1lr2MK	2025-09-06 00:11:05.681622
-13	debil@gmail.com	$2y$10$6M0LmI6ThYs54ZSZY/YsFelgnR0cRR85i/ELidvGwPfUXkFxJd6Yq	2025-09-06 00:29:34.646043
 \.
 
 
